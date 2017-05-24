@@ -107,3 +107,10 @@ gulp.task('clean-cmflibs', function (callback) { pluginRunSequence.apply(this, a
 gulp.task('purge', function (callback) { pluginRunSequence.apply(this, applyOps('purge').concat(callback)); })
 
 gulp.task('watch', function (callback) { pluginRunSequence.apply(this, applyOps('watch').concat(callback)); });
+
+/**
+ * i18n generators
+ */
+gulp.task('create-missing-i18n', function (callback) { pluginRunSequence.apply(this, applyOps('create-missing-i18n').concat(callback)); });
+gulp.task('i18n-ts2po', function (callback) { pluginRunSequence.apply(this, applyOps('i18n-ts2po').concat(callback)); });
+gulp.task('i18n-po2ts', function (callback) { pluginRunSequence.apply(this, applyOps('i18n-po2ts').concat(callback)); });

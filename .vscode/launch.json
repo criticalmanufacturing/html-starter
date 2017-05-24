@@ -22,12 +22,41 @@
                 "*": "${workspaceRoot}/src/*"
             }            
         },
-         {
-            "name": "Launch gulp web-server",
-            "type": "node",            
+        {
+            "name": "Launch web-server (dev)",
+            "type": "node",  
+            "request": "launch",          
             "cwd": "${workspaceRoot}/apps/cmf.core.web",
-            "program": "${workspaceRoot}/utils/cmf.dev.tasks/node_modules/gulp/bin/gulp.js",
-            "args": ["start" ]            
+            "program": "${workspaceRoot}/node_modules/gulp/bin/gulp.js",
+            "args": ["start"]            
+        },
+        {
+            "name": "Build production",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceRoot}/",
+            "program": "${workspaceRoot}/node_modules/gulp/bin/gulp.js",
+            "args": ["build", "--production"]
+        },
+        {
+            "name": "Launch gulp i18n tool: ts -> po",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceRoot}",
+            "program": "${workspaceRoot}/node_modules/gulp/bin/gulp.js",
+            "args": [
+                "i18n-ts2po"
+            ]
+        },
+        {
+            "name": "Launch gulp i18n tool: po -> ts",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceRoot}",
+            "program": "${workspaceRoot}/node_modules/gulp/bin/gulp.js",
+            "args": [
+                "i18n-po2ts"
+            ]
         }
     ]
 }
