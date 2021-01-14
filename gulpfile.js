@@ -60,13 +60,7 @@ gulp.task('build', function(callback) {
     rootUtils.runOperation(__dirname, _dependencies, _framework, _packages, _apps, "build", callback, typeof _framework === "string" && _framework !== "", isWebAppCompilable);
 
   }else{
-    var ops = applyOps('build');
-
-    // On customized projects we would only require to compile the web if the project defined a framework on their own
-    var isWebAppCompilable = _config.isWebAppCompilable;
-    if (isWebAppCompilable === true) {
-      ops = ops.concat(`${_config.webAppPrefix}.web>build`);
-    }
+    var ops = applyOps('build').concat(`${_config.webAppPrefix}.web>build`);
 
     if (ops.length > 0) {
       ops = ops.concat(callback);
