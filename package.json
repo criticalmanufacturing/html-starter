@@ -12,10 +12,13 @@
     "url": "https://github.com/criticalmanufacturing/html-starter.git"
   },
   "devDependencies": {
-    "gulp": "^3.9.1",
-    "run-sequence": "~1.1.0",
-    "yargs": "~4.8.0",
     "@criticalmanufacturing/dev-tasks": "*",
-    "@criticalmanufacturing/generator-html": "*"
+    "@criticalmanufacturing/generator-html": "*",
+    "gulp": "^3.9.1",
+    "run-sequence": "~2.2.1",
+    "yargs": "~7.1.2"
+  },
+  "dependencies": {
+    "g": "^2.0.1"
   }
 }
